@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : PlayerBehavior
 {
     [SerializeField] GameObject ghost;
     [SerializeField] GameObject spider;
@@ -21,14 +21,18 @@ public class EnemySpawner : MonoBehaviour
         currentEnemy = ghost;
         currentSpawn = enemySpawn1;
 
+        StartCoroutine(SpawnEnemy());
     }
 
-    private void SpawnEnemy()
+    IEnumerator SpawnEnemy()
     {
-
-        Instantiate(currentEnemy, currentSpawn.position, Quaternion.identity);
-        ChangeEnemy();
-        ChangeSpawn();
+        while (GetHealth() > 0)
+        {
+            Instantiate(currentEnemy, currentSpawn.position, Quaternion.identity);
+            ChangeEnemy();
+            ChangeSpawn();
+            yield return new WaitForSeconds(3f);
+        }
     }
 
     private void ChangeEnemy()

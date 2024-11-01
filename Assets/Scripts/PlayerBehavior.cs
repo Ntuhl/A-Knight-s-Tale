@@ -7,6 +7,7 @@ public class PlayerBehavior : MonoBehaviour
 
     [SerializeField] float movementSpeed;
     [SerializeField] int attackDamage;
+    [SerializeField] int health;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,10 @@ public class PlayerBehavior : MonoBehaviour
         transform.Translate(Vector2.right * moveInputRight * movementSpeed * Time.deltaTime);
         float moveInputUp = Input.GetAxis("Vertical");
         transform.Translate(Vector2.up * moveInputUp * movementSpeed * Time.deltaTime);
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }

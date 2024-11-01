@@ -17,7 +17,7 @@ public class Dagger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.MoveTowards(transform.position, Input.mousePosition, distance) * speed * Time.deltaTime);
+        transform.Translate(transform.up * speed * Time.deltaTime);
     }
 
     void DestroyProjectile()
