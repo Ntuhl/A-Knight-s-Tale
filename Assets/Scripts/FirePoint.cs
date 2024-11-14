@@ -6,8 +6,12 @@ public class FirePoint : MonoBehaviour
 {
     [SerializeField] float offset;
     [SerializeField] Transform shotpoint;
+    [SerializeField] Transform shotpoint2;
+    [SerializeField] Transform shotpoint3;
 
     [SerializeField] GameObject dagger;
+
+    [SerializeField] float killCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,23 @@ public class FirePoint : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(dagger, shotpoint.position, transform.rotation);
+            if (killCount > 30)
+            {
+                Instantiate(dagger, shotpoint.position, transform.rotation);
+                Instantiate(dagger, shotpoint2.position, transform.rotation);
+                Instantiate(dagger, shotpoint3.position, transform.rotation);
+            }
+            else if (killCount > 20)
+            { 
+                Instantiate(dagger, shotpoint.position, transform.rotation);
+                Instantiate(dagger, shotpoint2.position, transform.rotation);
+            }
+            else
+            {
+                Instantiate(dagger, shotpoint.position, transform.rotation);
+               
+            }
+
         }
     }
 }

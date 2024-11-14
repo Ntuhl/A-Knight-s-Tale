@@ -6,7 +6,6 @@ public class Dagger : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float lifetime;
-    [SerializeField] float distance;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,7 @@ public class Dagger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.up * speed * Time.deltaTime);
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
     void DestroyProjectile()
