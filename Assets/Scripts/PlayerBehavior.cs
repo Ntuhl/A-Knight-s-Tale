@@ -8,7 +8,6 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] float movementSpeed;
     [SerializeField] int attackDamage;
     [SerializeField] float health;
-    [SerializeField] float killCount;
 
     // Start is called before the first frame update
     void Start()

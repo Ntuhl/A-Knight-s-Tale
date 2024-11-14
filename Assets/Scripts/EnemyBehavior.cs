@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBehavior : MonoBehaviour
+public class EnemyBehavior : GameManager
 {
     
     
@@ -11,7 +11,8 @@ public class EnemyBehavior : MonoBehaviour
 
     private Transform target;
 
-    public float killCount;
+
+    private float killCount;
 
     // Start is called before the first frame update
     void Start()
@@ -27,19 +28,18 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.tag == "Player")
-        //{
-        //    GameManager.instance.InitiateGameOver();
-        //}
+        if (collision.gameObject.tag == "Player")
+        {
+            GameManager.instance.InitiateGameOver();
+        }
         Destroy(gameObject);
         Destroy(collision.gameObject);
         killCount ++;
+        //Debug.Log
     }
 
     public float GetKillCount()
     {
         return killCount;
     }
-
-
 }

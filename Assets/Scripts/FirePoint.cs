@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePoint : MonoBehaviour
+public class FirePoint : EnemyBehavior
 {
     [SerializeField] float offset;
     [SerializeField] Transform shotpoint;
@@ -11,7 +11,7 @@ public class FirePoint : MonoBehaviour
 
     [SerializeField] GameObject dagger;
 
-    [SerializeField] float killCount;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +28,13 @@ public class FirePoint : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (killCount > 30)
+            if (GetKillCount() > 30)
             {
                 Instantiate(dagger, shotpoint.position, transform.rotation);
                 Instantiate(dagger, shotpoint2.position, transform.rotation);
                 Instantiate(dagger, shotpoint3.position, transform.rotation);
             }
-            else if (killCount > 20)
+            else if (GetKillCount() > 20)
             { 
                 Instantiate(dagger, shotpoint.position, transform.rotation);
                 Instantiate(dagger, shotpoint2.position, transform.rotation);
