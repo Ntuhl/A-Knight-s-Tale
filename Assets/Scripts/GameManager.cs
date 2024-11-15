@@ -14,7 +14,7 @@ public class GameManager : PlayerBehavior
     [SerializeField] Transform enemySpawn4;
 
     [SerializeField] GameObject gameOverText;
-    bool isGameOver = false;
+    [SerializeField] bool isGameOver = false;
 
     public static GameManager instance;
 
@@ -41,6 +41,11 @@ public class GameManager : PlayerBehavior
         if (Input.GetButtonDown("Submit") && isGameOver)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (isGameOver)
+        {
+            gameOverText.SetActive(true);
         }
     }
 
