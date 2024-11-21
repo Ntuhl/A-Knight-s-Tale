@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1914206444106836745}
   - component: {fileID: 2487621933873033372}
   - component: {fileID: 1797838597846441113}
+  - component: {fileID: 6934587130343136657}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -147,6 +148,33 @@ MonoBehaviour:
   movementSpeed: 5
   attackDamage: 1
   health: 5
+--- !u!50 &6934587130343136657
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390018553322173744}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4303729610742801555
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +304,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efea33a8d599b4d5c97d577aaee9067b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 0
+  attackDamage: 0
+  health: 0
+  ghost: {fileID: 0}
+  spider: {fileID: 0}
+  enemySpawn1: {fileID: 0}
+  enemySpawn2: {fileID: 0}
+  enemySpawn3: {fileID: 0}
+  enemySpawn4: {fileID: 0}
+  gameOverText: {fileID: 0}
+  isGameOver: 0
+  speed: 0
   offset: -90
   shotpoint: {fileID: 2416748027074164858}
+  shotpoint2: {fileID: 0}
+  shotpoint3: {fileID: 0}
   dagger: {fileID: 8328394493407807509, guid: 554fe691d316e4d88897b157eb1a48f6, type: 3}

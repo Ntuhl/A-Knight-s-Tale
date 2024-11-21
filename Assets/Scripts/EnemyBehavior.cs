@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBehavior : GameManager
+public class EnemyBehavior : MonoBehaviour
 {
     
     
@@ -35,7 +35,6 @@ public class EnemyBehavior : GameManager
         Destroy(gameObject);
         Destroy(collision.gameObject);
         killCount ++;
-        //Debug.Log
     }
 
     public float GetKillCount()
